@@ -1,12 +1,21 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>What's new mission?</h1>
-    </div>
-  );
+import Header from "./components/layout/Header";
+
+import "./App.css";
+import BlueMoon from "./components/layout/BlueMoon";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="container">
+          <Header />
+          <BlueMoon />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

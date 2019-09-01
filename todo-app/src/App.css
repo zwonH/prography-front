@@ -1,11 +1,23 @@
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Fredoka One", cursive, "Noto Sans KR", sans-serif;
+  background-color: #383b47;
+
+  font-family: "Fredoka One", cursive;
+  /* "Noto Sans KR", sans-serif */
   font-weight: normal;
+  color: #efefef;
   text-decoration: none;
+}
+
+.container {
+  border: #ff5050 0.3rem solid;
+  margin: 3rem auto 3rem auto;
+  width: 60%;
+  height: 50rem;
+  position: relative;
 }
