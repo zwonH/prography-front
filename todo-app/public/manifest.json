@@ -1,0 +1,15 @@
+{
+  "short_name": "zwon's TODO",
+  "name": "zwon's TODO app for Prography",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "size": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
