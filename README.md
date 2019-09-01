@@ -13,8 +13,8 @@
 - position: absolute 사용 x
   
   
-[컨셉 및 계획]
-todo 앱은 해야 할 일을 관리하는 앱.  
+[컨셉 및 계획]  
+todo 앱은 해야 할 일을 관리하는 앱.   
 우주 비행사에게 우주선을 통해 미션을 내려주는 컨셉으로 제작.  
 
 ![todo_plan_before](https://user-images.githubusercontent.com/54440974/64077575-c3376580-cd0c-11e9-954f-17a9370898c4.png)
