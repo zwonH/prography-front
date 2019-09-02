@@ -1,17 +1,39 @@
 import React, { Component } from "react";
 
 import Header from "./components/layout/Header";
+import BlueMoon from "./components/layout/BlueMoon";
 
 import "./App.css";
 import AddTodo from "./components/AddTodo";
-import TodoItem from "./components/TodoItem";
+import Todos from "./components/Todos";
 
 //임시로 아이디 생성
 // import uuid from "uuid";
 
 class App extends Component {
   state = {
-    todos: []
+    todos: [
+      {
+        id: 1,
+        title: "임시: 프로그라피 지원하기",
+        completed: true
+      },
+      {
+        id: 2,
+        title: "임시: 과제 준비하기",
+        completed: false
+      },
+      {
+        id: 3,
+        title: "임시: 프로그라피 친구들한테 알려주기",
+        completed: false
+      },
+      {
+        id: 4,
+        title: "임시: 사랑해요 프로그라피",
+        completed: false
+      }
+    ]
   };
 
   //Add Todo
@@ -27,9 +49,14 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <Header />
-          <AddTodo addTodo={this.addTodo} />
-          <TodoItem />
+          <React.Fragment>
+            <Header />
+            <AddTodo addTodo={this.addTodo} />
+            <div className="todoListDIv">
+              <Todos todos={this.state.todos} />
+            </div>
+            <BlueMoon />
+          </React.Fragment>
         </div>
       </div>
     );

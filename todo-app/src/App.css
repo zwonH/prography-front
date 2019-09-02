@@ -6,7 +6,6 @@
 
 body {
   background-color: #383b47;
-
   font-family: "Fredoka One", cursive;
   /* "Noto Sans KR", sans-serif */
   font-weight: normal;
@@ -15,9 +14,21 @@ body {
 }
 
 .container {
-  border: #ff5050 0.3rem solid;
-  margin: 3rem auto 3rem auto;
+  position: relative;
   width: 60%;
   height: 50rem;
+  margin: 3rem auto 3rem auto;
+  border: #ff5050 0.3rem solid;
+}
+
+.todoListDIv {
   position: relative;
+  width: 75%;
+  height: 13rem;
+  margin: 16.5rem auto 0 auto;
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* 스크롤바 삭제가 되지 않는다... */
+  -ms-overflow-style: none;
 }

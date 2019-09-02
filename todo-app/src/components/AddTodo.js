@@ -49,7 +49,7 @@ const addTodoStyle = {
   appearance: "none",
   fontFamily: "Noto Sans KR, sansSerif",
   fontSize: "1.1rem",
-  lineheight: "1.1rem",
+  lineHeight: "1.1rem",
   color: "#EFEFEF"
 };
 

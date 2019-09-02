@@ -1,22 +1,26 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
   render() {
-    return <div style={blueMoonStyle}></div>;
+    const { id, title } = this.props.todo;
+    return (
+      <p style={todoListStyle}>
+        {id} {title}
+        <button> x </button>
+      </p>
+    );
   }
-}
+} //export class TodoItem ends here
 
-const blueMoonStyle = {
-  position: "relative",
-  top: "11.7rem",
-  width: "100%",
-  height: "21rem",
-  margin: "0 auto",
-  backgroundImage: "url('/blueMoon.png')",
-  //   이미지를 public에 넣어야함! 다른 폴더를 만드니 적용 안 됨.
-  backgroundSize: "100% 21rem",
-  backgroundPosition: "center",
-  alt: "blueMoon"
+TodoItem.propTypes = {
+  todo: PropTypes.object.isRequired
+};
+
+const todoListStyle = {
+  fontFamily: "Noto Sans KR, sansSerif",
+  fontSize: "0.84rem",
+  marginBottom: "1.8rem"
 };
 
 export default TodoItem;
