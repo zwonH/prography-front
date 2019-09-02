@@ -14,14 +14,38 @@ export class TodoItem extends Component {
     };
   };
 
+  flagStyle = () => {
+    return {
+      position: "relative",
+      top: "0.3rem",
+      width: "1.1rem",
+      height: "1.1rem",
+      marginRight: "0.8rem",
+      background: "transparent",
+      backgroundImage: this.props.todo.completed
+        ? "url('/flagWhite.png')"
+        : "url('/flagBlack.png')",
+      backgroundPosition: "top center",
+      backgroundSize: "auto 100%",
+      backgroundColor: "transparent",
+      backgroundRepeat: "no-repeat",
+      border: "none",
+      lineHeight: "1rem",
+      cursor: "pointer"
+    };
+  };
+
   render() {
     const { id, title } = this.props.todo;
     return (
       <div style={this.lineThroughStyle()}>
-        <p>
-          <span onClick={this.props.markComplete.bind(this, id)}>{title}</span>
-          <button style={xBtnStyle}> x </button>
-        </p>
+        <ul>
+          <li onClick={this.props.markComplete.bind(this, id)}>
+            <button style={this.flagStyle()}> </button>
+            {title}
+            <button style={xBtnStyle}> x </button>
+          </li>
+        </ul>
       </div>
     );
   }
