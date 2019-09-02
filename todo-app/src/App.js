@@ -3,13 +3,11 @@ import React, { Component } from "react";
 import Header from "./components/layout/Header";
 import BlueMoon from "./components/layout/BlueMoon";
 
-import "./App.css";
 import AddTodo from "./components/AddTodo";
 import Toggle from "./components/Toggle";
 import Todos from "./components/Todos";
 
-//임시로 아이디 생성
-// import uuid from "uuid";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -17,7 +15,7 @@ class App extends Component {
       {
         id: 1,
         title: "임시: 프로그라피 지원하기",
-        completed: true
+        completed: false
       },
       {
         id: 2,
@@ -46,6 +44,17 @@ class App extends Component {
     // };
   };
 
+  markComplete = id => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -55,7 +64,10 @@ class App extends Component {
             <AddTodo addTodo={this.addTodo} />
             <Toggle>
               <div className="todoListDIv">
-                <Todos todos={this.state.todos} />
+                <Todos
+                  todos={this.state.todos}
+                  markComplete={this.markComplete}
+                />
               </div>
             </Toggle>
             <BlueMoon />
