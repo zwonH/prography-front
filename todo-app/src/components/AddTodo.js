@@ -59,7 +59,7 @@ const spaceshipStyle = {
   height: "5rem",
   margin: "2.3rem auto 0 auto",
   padding: "0",
-  backgroundImage: "url('/rocket2.png')",
+  backgroundImage: "url('/rocket.png')",
   backgroundPosition: "top center",
   backgroundSize: "100% auto",
   backgroundColor: "transparent",

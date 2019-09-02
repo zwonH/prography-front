@@ -5,6 +5,7 @@ import BlueMoon from "./components/layout/BlueMoon";
 
 import "./App.css";
 import AddTodo from "./components/AddTodo";
+import Toggle from "./components/Toggle";
 import Todos from "./components/Todos";
 
 //임시로 아이디 생성
@@ -52,9 +53,11 @@ class App extends Component {
           <React.Fragment>
             <Header />
             <AddTodo addTodo={this.addTodo} />
-            <div className="todoListDIv">
-              <Todos todos={this.state.todos} />
-            </div>
+            <Toggle>
+              <div className="todoListDIv">
+                <Todos todos={this.state.todos} />
+              </div>
+            </Toggle>
             <BlueMoon />
           </React.Fragment>
         </div>

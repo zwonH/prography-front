@@ -18,9 +18,10 @@ TodoItem.propTypes = {
 };
 
 const todoListStyle = {
+  marginBottom: "1.8rem",
   fontFamily: "Noto Sans KR, sansSerif",
   fontSize: "0.84rem",
-  marginBottom: "1.8rem"
+  textAlign: "left"
 };
 
 export default TodoItem;
