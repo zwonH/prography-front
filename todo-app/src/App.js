@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 import Header from "./components/layout/Header";
-import BlueMoon from "./components/layout/BlueMoon";
 
 import "./App.css";
 import AddTodo from "./components/AddTodo";
+import TodoItem from "./components/TodoItem";
 
 //임시로 아이디 생성
 // import uuid from "uuid";
@@ -29,7 +29,7 @@ class App extends Component {
         <div className="container">
           <Header />
           <AddTodo addTodo={this.addTodo} />
-          <BlueMoon />
+          <TodoItem />
         </div>
       </div>
     );
