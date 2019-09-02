@@ -7,7 +7,6 @@ function Header() {
 
 const headerStyle = {
   marginTop: "1.5rem",
-
   fontSize: "1.8rem",
   lineheight: "3rem",
   textAlign: "center"
