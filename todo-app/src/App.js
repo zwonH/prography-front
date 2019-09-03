@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import Header from "./components/layout/Header";
 import BlueMoon from "./components/layout/BlueMoon";
@@ -9,27 +10,31 @@ import Todos from "./components/Todos";
 
 import "./App.css";
 
-// 사용할 API 주소:
-// https://killsanghyuck.github.io/prography_5th_front/todoDummy.json
-
 const App = () => {
   const [state, setState] = useState({
-    todos: [
-      {
-        title: "임시: 프로그라피 지원하기",
-        id: 1,
-        status: "todo"
-      },
-      {
-        title: "임시: 과제 준비하기",
-        id: 2,
-        status: "complete"
-      }
-    ]
+    todos: []
   });
 
+  const url =
+    "https://killsanghyuck.github.io/prography_5th_front/todoDummy.json";
+
   // Add Todo
-  const addTodo = title => {};
+  const addTodo = title => {
+    // axios
+    //   .post(url, {
+    //     title,
+    //     status: "todo"
+    //   })
+    //   .then(res => setState({ todos: [...state.todos, res.data.body] }));
+  };
+
+  // API 불러오기
+  const getData = () => {
+    axios.get(url).then(res => setState({ todos: res.data.body }));
+  };
+  useEffect(() => {
+    getData();
+  }, []);
 
   // 취소선
   const markComplete = id => {
@@ -46,27 +51,6 @@ const App = () => {
       })
     });
   };
-
-  // const fetchData = () => {
-  //   fetch("https://killsanghyuck.github.io/prography_5th_front/todoDummy.json")
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       json.body.forEach;
-  //     });
-  // };
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await axios(
-  //       "https://killsanghyuck.github.io/prography_5th_front/todoDummy.json"
-  //     );
-  //     setState(res.data);
-  //   };
-  //   fetchData();
-  // }, []);
 
   return (
     <div className="App">
