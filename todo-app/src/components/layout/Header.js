@@ -1,9 +1,9 @@
 // rfc tab
 import React from "react";
 
-function Header() {
+const Header = () => {
   return <div style={headerStyle}>What's new mission?</div>;
-}
+};
 
 const headerStyle = {
   marginTop: "1.5rem",

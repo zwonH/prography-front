@@ -1,26 +1,24 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class Toggle extends Component {
-  state = {
+const Toggle = props => {
+  const [state, setState] = useState({
     on: false
-  };
+  });
 
-  toggle = () => {
-    this.setState({
-      on: !this.state.on
+  const toggle = () => {
+    setState({
+      on: !state.on
     });
   };
 
-  render() {
-    return (
-      <div style={toggleStyle}>
-        <div onClick={this.toggle} style={astronautStyle}></div>
-        {this.state.on && this.props.children}
-        {!this.state.on && "Show me the missions"}
-      </div>
-    );
-  }
-}
+  return (
+    <div style={toggleStyle}>
+      <div onClick={toggle} style={astronautStyle}></div>
+      {state.on && props.children}
+      {!state.on && "Show me the missions"}
+    </div>
+  );
+};
 
 const astronautStyle = {
   display: "block",

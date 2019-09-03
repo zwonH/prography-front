@@ -1,35 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export class AddTodo extends Component {
-  state = {
+const AddTodo = props => {
+  //   const state = {
+  //     title: ""
+  //   };
+  const [state, setState] = useState({
     title: ""
-  };
+  });
 
-  onSubmit = e => {
+  const onSubmit = e => {
     e.preventDefault();
-    this.props.addTodo(this.state.title);
-    this.setState({ title: "" });
+    props.addTodo(state.title);
+    setState({ title: "" });
   };
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  const onChange = e => setState({ [e.target.name]: e.target.value });
 
-  render() {
-    return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          type="text"
-          name="title"
-          style={addTodoStyle}
-          value={this.state.title}
-          onChange={this.onChange}
-        />
-        {/* <div type="submit" style={spaceshipStyle}></div> */}
-        <input type="submit" value="" style={spaceshipStyle} />
-      </form>
-    );
-  }
-} //export class ends
+  return (
+    <form onSubmit={onSubmit}>
+      <input
+        type="text"
+        name="title"
+        style={addTodoStyle}
+        value={state.title}
+        onChange={onChange}
+      />
+      {/* <div type="submit" style={spaceshipStyle}></div> */}
+      <input type="submit" value="" style={spaceshipStyle} />
+    </form>
+  );
+}; //export class ends
 
 const addTodoStyle = {
   display: "block",

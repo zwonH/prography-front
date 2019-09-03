@@ -1,8 +1,8 @@
 import React from "react";
 
-function BlueMoon() {
+const BlueMoon = () => {
   return <div style={blueMoonStyle}></div>;
-}
+};
 
 const blueMoonStyle = {
   display: "block",

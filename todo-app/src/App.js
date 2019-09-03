@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+// useState, useEffect
 
 import Header from "./components/layout/Header";
 import BlueMoon from "./components/layout/BlueMoon";
@@ -9,8 +10,11 @@ import Todos from "./components/Todos";
 
 import "./App.css";
 
-class App extends Component {
-  state = {
+// 사용할 API 주소:
+// https://killsanghyuck.github.io/prography_5th_front/todoDummy.json
+
+const App = props => {
+  const [state, setState] = useState({
     todos: [
       {
         id: 1,
@@ -33,10 +37,10 @@ class App extends Component {
         completed: false
       }
     ]
-  };
+  });
 
-  //Add Todo
-  addTodo = title => {
+  // Add Todo
+  const addTodo = title => {
     // const todo = {
     //   id: uuid.v4(),
     //   title,
@@ -44,9 +48,10 @@ class App extends Component {
     // };
   };
 
-  markComplete = id => {
-    this.setState({
-      todos: this.state.todos.map(todo => {
+  // 취소선
+  const markComplete = id => {
+    setState({
+      todos: state.todos.map(todo => {
         if (todo.id === id) {
           todo.completed = !todo.completed;
         }
@@ -55,27 +60,22 @@ class App extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className="App">
-        <div className="container">
-          <React.Fragment>
-            <Header />
-            <AddTodo addTodo={this.addTodo} />
-            <Toggle>
-              <div className="todoListDIv">
-                <Todos
-                  todos={this.state.todos}
-                  markComplete={this.markComplete}
-                />
-              </div>
-            </Toggle>
-            <BlueMoon />
-          </React.Fragment>
-        </div>
+  return (
+    <div className="App">
+      <div className="container">
+        <React.Fragment>
+          <Header />
+          <AddTodo addTodo={addTodo} />
+          <Toggle>
+            <div className="todoListDIv">
+              <Todos todos={state.todos} markComplete={markComplete} />
+            </div>
+          </Toggle>
+          <BlueMoon />
+        </React.Fragment>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;

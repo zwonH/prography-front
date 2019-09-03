@@ -1,20 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-export class TodoItem extends Component {
-  lineThroughStyle = () => {
+const TodoItem = props => {
+  const lineThroughStyle = () => {
     return {
       marginBottom: "1.8rem",
       fontFamily: "Noto Sans KR, sansSerif",
       fontSize: "0.84rem",
       lineHeight: "1rem",
-      textDecoration: this.props.todo.completed ? "line-through" : "none",
+      textDecoration: props.todo.completed ? "line-through" : "none",
       textAlign: "left",
       cursor: "pointer"
     };
   };
 
-  flagStyle = () => {
+  const flagStyle = () => {
     return {
       position: "relative",
       top: "0.3rem",
@@ -22,7 +22,7 @@ export class TodoItem extends Component {
       height: "1.1rem",
       marginRight: "0.8rem",
       background: "transparent",
-      backgroundImage: this.props.todo.completed
+      backgroundImage: props.todo.completed
         ? "url('/flagWhite.png')"
         : "url('/flagBlack.png')",
       backgroundPosition: "top center",
@@ -35,21 +35,19 @@ export class TodoItem extends Component {
     };
   };
 
-  render() {
-    const { id, title } = this.props.todo;
-    return (
-      <div style={this.lineThroughStyle()}>
-        <ul>
-          <li onClick={this.props.markComplete.bind(this, id)}>
-            <button style={this.flagStyle()}> </button>
-            {title}
-            <button style={xBtnStyle}> x </button>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-} //export class TodoItem ends here
+  const { id, title } = props.todo;
+  return (
+    <div style={lineThroughStyle()}>
+      <ul>
+        <li onClick={props.markComplete.bind(this, id)}>
+          <button style={flagStyle()}> </button>
+          {title}
+          <button style={xBtnStyle}> x </button>
+        </li>
+      </ul>
+    </div>
+  );
+}; //export class TodoItem ends here
 
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
