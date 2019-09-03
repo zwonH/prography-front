@@ -23,7 +23,6 @@ const AddTodo = props => {
         value={state.title}
         onChange={onChange}
       />
-      {/* <div type="submit" style={spaceshipStyle}></div> */}
       <input type="submit" value="" style={spaceshipStyle} />
     </form>
   );

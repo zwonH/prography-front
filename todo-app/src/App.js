@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+// npm install axios  OR  yarn add axios  로 설치
+import uuid from "uuid";
 
 import Header from "./components/layout/Header";
 import BlueMoon from "./components/layout/BlueMoon";
@@ -15,34 +17,29 @@ const App = () => {
     todos: []
   });
 
-  const url =
-    "https://killsanghyuck.github.io/prography_5th_front/todoDummy.json";
-
-  // Add Todo
-  const addTodo = title => {
-    axios
-      .post(url, {
-        title,
-        status: "todo"
-      })
-      .then(res => setState({ todos: [...state.todos, res.data.body] }));
-  };
-
   // API 불러오기
   const getData = () => {
-    axios.get(url).then(res => setState({ todos: res.data.body }));
+    axios
+      .get("https://killsanghyuck.github.io/prography_5th_front/todoDummy.json")
+      .then(res => setState({ todos: res.data.body }));
   };
   useEffect(() => {
     getData();
   }, []);
 
+  // Add Todo
+  const addTodo = title => {
+    const newTodo = {
+      title,
+      id: uuid.v4(),
+      status: "todo"
+    };
+    setState({ todos: [...state.todos, newTodo] });
+  };
+
   // Delete Todo
   const delTodo = id => {
-    axios.delete(url).then(res =>
-      setState({
-        todos: [...state.todos.filter(todo => todo.id !== id)]
-      })
-    );
+    setState({ todos: [...state.todos.filter(todo => todo.id !== id)] });
   };
 
   // 취소선
