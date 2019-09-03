@@ -9,7 +9,7 @@ const Todos = props => {
 }; //export class TodoItem ends here
 
 Todos.propTypes = {
-  todos: PropTypes.object.isRequired,
+  todos: PropTypes.array.isRequired,
   markComplete: PropTypes.func.isRequired
 };
 

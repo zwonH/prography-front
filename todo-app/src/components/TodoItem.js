@@ -8,7 +8,8 @@ const TodoItem = props => {
       fontFamily: "Noto Sans KR, sansSerif",
       fontSize: "0.84rem",
       lineHeight: "1rem",
-      textDecoration: props.todo.completed ? "line-through" : "none",
+      textDecoration:
+        props.todo.status === "complete" ? "line-through" : "none",
       textAlign: "left",
       cursor: "pointer"
     };
@@ -22,9 +23,10 @@ const TodoItem = props => {
       height: "1.1rem",
       marginRight: "0.8rem",
       background: "transparent",
-      backgroundImage: props.todo.completed
-        ? "url('/flagWhite.png')"
-        : "url('/flagBlack.png')",
+      backgroundImage:
+        props.todo.status === "complete"
+          ? "url('/flagWhite.png')"
+          : "url('/flagBlack.png')",
       backgroundPosition: "top center",
       backgroundSize: "auto 100%",
       backgroundColor: "transparent",

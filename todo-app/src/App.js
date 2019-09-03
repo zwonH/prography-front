@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// useState, useEffect
 
 import Header from "./components/layout/Header";
 import BlueMoon from "./components/layout/BlueMoon";
@@ -13,52 +12,61 @@ import "./App.css";
 // 사용할 API 주소:
 // https://killsanghyuck.github.io/prography_5th_front/todoDummy.json
 
-const App = props => {
+const App = () => {
   const [state, setState] = useState({
     todos: [
       {
-        id: 1,
         title: "임시: 프로그라피 지원하기",
-        completed: false
+        id: 1,
+        status: "todo"
       },
       {
-        id: 2,
         title: "임시: 과제 준비하기",
-        completed: false
-      },
-      {
-        id: 3,
-        title: "임시: 프로그라피 친구들한테 알려주기",
-        completed: false
-      },
-      {
-        id: 4,
-        title: "임시: 사랑해요 프로그라피",
-        completed: false
+        id: 2,
+        status: "complete"
       }
     ]
   });
 
   // Add Todo
-  const addTodo = title => {
-    // const todo = {
-    //   id: uuid.v4(),
-    //   title,
-    //   completed: false
-    // };
-  };
+  const addTodo = title => {};
 
   // 취소선
   const markComplete = id => {
     setState({
       todos: state.todos.map(todo => {
         if (todo.id === id) {
-          todo.completed = !todo.completed;
+          if (todo.status === "todo") {
+            todo.status = "complete";
+          } else {
+            todo.status = "todo";
+          }
         }
         return todo;
       })
     });
   };
+
+  // const fetchData = () => {
+  //   fetch("https://killsanghyuck.github.io/prography_5th_front/todoDummy.json")
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       json.body.forEach;
+  //     });
+  // };
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await axios(
+  //       "https://killsanghyuck.github.io/prography_5th_front/todoDummy.json"
+  //     );
+  //     setState(res.data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="App">
