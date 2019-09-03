@@ -4,13 +4,19 @@ import PropTypes from "prop-types";
 
 const Todos = props => {
   return props.todos.map(todo => (
-    <TodoItem key={todo.id} todo={todo} markComplete={props.markComplete} />
+    <TodoItem
+      key={todo.id}
+      todo={todo}
+      markComplete={props.markComplete}
+      delTodo={props.delTodo}
+    />
   ));
-}; //export class TodoItem ends here
+};
 
 Todos.propTypes = {
   todos: PropTypes.array.isRequired,
-  markComplete: PropTypes.func.isRequired
+  markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired
 };
 
 export default Todos;

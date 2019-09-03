@@ -41,19 +41,24 @@ const TodoItem = props => {
   return (
     <div style={lineThroughStyle()}>
       <ul>
-        <li onClick={props.markComplete.bind(this, id)}>
-          <button style={flagStyle()}> </button>
-          {title}
-          <button style={xBtnStyle}> x </button>
+        <li>
+          <span onClick={props.markComplete.bind(this, id)}>
+            <button style={flagStyle()}> </button>
+            {title}
+          </span>
+          <button onClick={props.delTodo.bind(this, id)} style={xBtnStyle}>
+            x
+          </button>
         </li>
       </ul>
     </div>
   );
-}; //export class TodoItem ends here
+};
 
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
-  markComplete: PropTypes.func.isRequired
+  markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired
 };
 
 const xBtnStyle = {

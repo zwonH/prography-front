@@ -20,12 +20,12 @@ const App = () => {
 
   // Add Todo
   const addTodo = title => {
-    // axios
-    //   .post(url, {
-    //     title,
-    //     status: "todo"
-    //   })
-    //   .then(res => setState({ todos: [...state.todos, res.data.body] }));
+    axios
+      .post(url, {
+        title,
+        status: "todo"
+      })
+      .then(res => setState({ todos: [...state.todos, res.data.body] }));
   };
 
   // API 불러오기
@@ -35,6 +35,15 @@ const App = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  // Delete Todo
+  const delTodo = id => {
+    axios.delete(url).then(res =>
+      setState({
+        todos: [...state.todos.filter(todo => todo.id !== id)]
+      })
+    );
+  };
 
   // 취소선
   const markComplete = id => {
@@ -60,7 +69,11 @@ const App = () => {
           <AddTodo addTodo={addTodo} />
           <Toggle>
             <div className="todoListDIv">
-              <Todos todos={state.todos} markComplete={markComplete} />
+              <Todos
+                todos={state.todos}
+                markComplete={markComplete}
+                delTodo={delTodo}
+              />
             </div>
           </Toggle>
           <BlueMoon />

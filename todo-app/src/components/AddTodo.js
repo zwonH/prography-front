@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const AddTodo = props => {
-  //   const state = {
-  //     title: ""
-  //   };
   const [state, setState] = useState({
     title: ""
   });
@@ -30,7 +27,7 @@ const AddTodo = props => {
       <input type="submit" value="" style={spaceshipStyle} />
     </form>
   );
-}; //export class ends
+};
 
 const addTodoStyle = {
   display: "block",
