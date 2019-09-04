@@ -32,7 +32,7 @@ const addTodoStyle = {
   display: "block",
   width: "80%",
   resize: "none",
-  margin: "4.5rem auto 0 auto",
+  margin: "5.8rem auto 0 auto",
   padding: "0.1rem",
   backgroundColor: "transparent",
   border: "none",

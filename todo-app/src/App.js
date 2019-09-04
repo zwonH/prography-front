@@ -59,21 +59,26 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="container">
-        <React.Fragment>
-          <Header />
-          <AddTodo addTodo={addTodo} />
-          <Toggle>
-            <div className="todoListDIv">
-              <Todos
-                todos={state.todos}
-                markComplete={markComplete}
-                delTodo={delTodo}
-              />
+      <React.Fragment>
+        <div className="container">
+          <div className="starsTopRight">
+            <div className="starsTopLeft">
+              <Header />
+              <AddTodo addTodo={addTodo} />
+
+              <Toggle>
+                <div className="todoListDIv">
+                  <Todos
+                    todos={state.todos}
+                    markComplete={markComplete}
+                    delTodo={delTodo}
+                  />
+                </div>
+              </Toggle>
             </div>
-          </Toggle>
-        </React.Fragment>
-      </div>
+          </div>
+        </div>
+      </React.Fragment>
     </div>
   );
 };

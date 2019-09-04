@@ -42,3 +42,25 @@ body {
 .todoListDIv::-webkit-scrollbar {
   display: none;
 }
+
+.starsTopRight {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 0.1rem;
+  background-image: url("/stars2.png");
+  background-size: 13rem 13rem;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.starsTopLeft {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 0.2rem;
+  background-image: url("/stars1.png");
+  background-size: 13rem 13rem;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
