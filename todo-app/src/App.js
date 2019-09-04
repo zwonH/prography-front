@@ -57,28 +57,6 @@ const App = () => {
     });
   };
 
-  //   return (
-  //     <div className="App">
-  //       <div className="container">
-  //         <React.Fragment>
-  //           <Header />
-  //           <AddTodo addTodo={addTodo} />
-  //           <Toggle>
-  //             <div className="todoListDIv">
-  //               <Todos
-  //                 todos={state.todos}
-  //                 markComplete={markComplete}
-  //                 delTodo={delTodo}
-  //               />
-  //             </div>
-  //           </Toggle>
-  //           <BlueMoon />
-  //         </React.Fragment>
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
   return (
     <div className="App">
       <div className="container">
