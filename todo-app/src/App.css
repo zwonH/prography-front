@@ -47,9 +47,9 @@ body {
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  margin-top: 0.1rem;
-  background-image: url("/stars2.png");
-  background-size: 13rem 13rem;
+  margin: 0.1rem 0.1rem 0 0;
+  background-image: url("/stars4.png");
+  background-size: 16rem 16rem;
   background-repeat: no-repeat;
   background-position: top right;
 }
@@ -58,9 +58,9 @@ body {
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  margin-top: 0.2rem;
-  background-image: url("/stars1.png");
-  background-size: 13rem 13rem;
+  margin: 0.2rem 0 0 0;
+  background-image: url("/stars3.png");
+  background-size: 16rem 16rem;
   background-repeat: no-repeat;
   background-position: top left;
 }
