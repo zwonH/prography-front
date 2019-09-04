@@ -64,3 +64,11 @@ body {
   background-repeat: no-repeat;
   background-position: top left;
 }
+
+.spaceshipClass {
+  background-image: url("/rocket1.png");
+}
+
+.spaceshipClass:hover {
+  background-image: url("/rocket2.png");
+}

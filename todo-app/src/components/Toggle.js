@@ -24,7 +24,7 @@ const astronautStyle = {
   display: "block",
   width: "6rem",
   height: "6rem",
-  margin: "5.7rem auto 1rem auto",
+  margin: "0.7rem auto 1rem auto",
   padding: "0",
   backgroundImage: "url('/astronaut.png')",
   backgroundPosition: "top center",

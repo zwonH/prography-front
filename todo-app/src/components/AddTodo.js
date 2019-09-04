@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "../App.css";
 
 const AddTodo = props => {
   const [state, setState] = useState({
@@ -23,7 +24,12 @@ const AddTodo = props => {
         value={state.title}
         onChange={onChange}
       />
-      <input type="submit" value="" style={spaceshipStyle} />
+      <input
+        type="submit"
+        value=""
+        style={spaceshipStyle}
+        className="spaceshipClass"
+      />
     </form>
   );
 };
@@ -44,13 +50,13 @@ const addTodoStyle = {
   color: "#EFEFEF"
 };
 
+// 마우스 호버 css는 우선 App.css에 넣어놓았음.
 const spaceshipStyle = {
   display: "block",
   width: "3.3rem",
-  height: "5rem",
+  height: "10rem",
   margin: "2.3rem auto 0 auto",
   padding: "0",
-  backgroundImage: "url('/rocket.png')",
   backgroundPosition: "top center",
   backgroundSize: "100% auto",
   backgroundColor: "transparent",
