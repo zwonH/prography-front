@@ -4,7 +4,6 @@ import axios from "axios";
 import uuid from "uuid";
 
 import Header from "./components/layout/Header";
-import BlueMoon from "./components/layout/BlueMoon";
 
 import AddTodo from "./components/AddTodo";
 import Toggle from "./components/Toggle";
@@ -58,6 +57,28 @@ const App = () => {
     });
   };
 
+  //   return (
+  //     <div className="App">
+  //       <div className="container">
+  //         <React.Fragment>
+  //           <Header />
+  //           <AddTodo addTodo={addTodo} />
+  //           <Toggle>
+  //             <div className="todoListDIv">
+  //               <Todos
+  //                 todos={state.todos}
+  //                 markComplete={markComplete}
+  //                 delTodo={delTodo}
+  //               />
+  //             </div>
+  //           </Toggle>
+  //           <BlueMoon />
+  //         </React.Fragment>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
   return (
     <div className="App">
       <div className="container">
@@ -73,7 +94,6 @@ const App = () => {
               />
             </div>
           </Toggle>
-          <BlueMoon />
         </React.Fragment>
       </div>
     </div>
