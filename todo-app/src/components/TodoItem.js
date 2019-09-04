@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const TodoItem = props => {
+  // 투두 리스트 스타일 + 취소선 기능
   const lineThroughStyle = () => {
     return {
       marginBottom: "1.8rem",
@@ -15,6 +16,7 @@ const TodoItem = props => {
     };
   };
 
+  // 깃발 버튼 스타일 + 취소선 기능
   const flagStyle = () => {
     return {
       position: "relative",
@@ -61,6 +63,7 @@ TodoItem.propTypes = {
   delTodo: PropTypes.func.isRequired
 };
 
+// 'x' 삭제 버튼
 const xBtnStyle = {
   marginLeft: "0.5rem",
   background: "transparent",

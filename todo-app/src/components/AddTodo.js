@@ -34,6 +34,7 @@ const AddTodo = props => {
   );
 };
 
+// 인풋 창
 const addTodoStyle = {
   display: "block",
   width: "80%",
@@ -50,6 +51,7 @@ const addTodoStyle = {
   color: "#EFEFEF"
 };
 
+// 로켓 버튼
 // 마우스 호버 css는 우선 App.css에 넣어놓았음.
 const spaceshipStyle = {
   display: "block",

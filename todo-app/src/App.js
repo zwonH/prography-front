@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // npm install axios  OR  yarn add axios  로 설치
 import uuid from "uuid";
+import "./App.css";
 
-import Header from "./components/layout/Header";
-
+// import Header from "./components/layout/Header";
 import AddTodo from "./components/AddTodo";
 import Toggle from "./components/Toggle";
 import Todos from "./components/Todos";
-
-import "./App.css";
 
 const App = () => {
   const [state, setState] = useState({
@@ -63,9 +61,8 @@ const App = () => {
         <div className="container">
           <div className="starsTopRight">
             <div className="starsTopLeft">
-              <Header />
+              <div className="headerDiv">What's new mission?</div>
               <AddTodo addTodo={addTodo} />
-
               <Toggle>
                 <div className="todoListDIv">
                   <Todos

@@ -20,6 +20,7 @@ const Toggle = props => {
   );
 };
 
+// 우주인 버튼
 const astronautStyle = {
   display: "block",
   width: "6rem",
@@ -36,6 +37,7 @@ const astronautStyle = {
   cursor: "pointer"
 };
 
+// 'Show me the mission' 텍스트 가운데로
 const toggleStyle = {
   textAlign: "center"
 };
