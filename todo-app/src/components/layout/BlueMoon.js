@@ -9,6 +9,8 @@ const blueMoonStyle = {
   position: "fixed",
   top: "32.3rem",
   width: "60%",
+  maxWidth: "47rem",
+  minWidth: "19rem",
   height: "21rem",
   margin: "0 auto",
   backgroundImage: "url('/blueMoon.png')",

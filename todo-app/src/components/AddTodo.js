@@ -37,13 +37,7 @@ const addTodoStyle = {
   backgroundColor: "transparent",
   border: "none",
   borderBottom: "0.1px #D1C7AC solid",
-  //   인풋 기본 속성 제거... 왜 적용이 안 되지... 더 찾아봐야함
-  boxShadow: "none",
-  WebkitBoxShadow: "none",
-  MozBoxShadow: "none",
-  WebkitAppearance: "none",
-  MozAppearance: "none",
-  appearance: "none",
+  outline: "none",
   fontFamily: "Noto Sans KR, sansSerif",
   fontSize: "1.1rem",
   lineHeight: "1.1rem",
@@ -62,6 +56,7 @@ const spaceshipStyle = {
   backgroundColor: "transparent",
   backgroundRepeat: "no-repeat",
   border: "none",
+  outline: "none",
   alt: "rocketship",
   cursor: "pointer"
 };
